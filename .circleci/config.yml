@@ -94,15 +94,13 @@ jobs:
           command: |
             mkdir -p $EXTRACT_DEST
             tar -xvzf artifacts/pal-tracker-$CIRCLE_SHA1.tgz -C $EXTRACT_DEST
-
       - run:
           name: Deploy
           command: |
             cd $EXTRACT_DEST
-
             cf login -a $CF_API -u "$CF_USERNAME" -p "$CF_PASSWORD" -o "$CF_ORG" -s "$CF_SPACE_PROD"
             cf push -f manifest-$ENVIRONMENT.yml
-            bash ./migrate-databases.sh pal-tracker . /root/projects
+            bash ./migrate-databases.sh pal-tracker . /root/project
 
 workflows:
   version: 2
