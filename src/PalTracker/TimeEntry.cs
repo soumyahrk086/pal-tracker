@@ -30,5 +30,20 @@ namespace PalTracker
            this.date = date;
            this.hours = hours;
         }
+
+        public override bool Equals(object obj)
+        {
+            return obj is TimeEntry entry &&
+                   id == entry.id &&
+                   projectId == entry.projectId &&
+                   userId == entry.userId &&
+                   date == entry.date &&
+                   hours == entry.hours;
+        }
+
+        public override int GetHashCode()
+        {
+            return HashCode.Combine(id, projectId, userId, date, hours);
+        }
     }
 }

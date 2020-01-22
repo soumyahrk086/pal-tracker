@@ -39,23 +39,20 @@ namespace PalTracker
 
         public TimeEntry Update(long id, TimeEntry timeEntry)
         {
-            if(timeEntryobjects.ContainsKey(id))
-            {
+            
                 timeEntry.id  = id ;
                 timeEntryobjects[id] = timeEntry;
-                return timeEntryobjects[id];
-            }
+                return timeEntryobjects[id];      
             
-            return null;
+          
                
         }
 
         public void Delete(long id)
         {
-            if(timeEntryobjects.ContainsKey(id))
-            {
+           
                 timeEntryobjects.Remove(id);
-            }
+            
         }
     }
 }
