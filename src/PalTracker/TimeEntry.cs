@@ -5,45 +5,45 @@ namespace PalTracker
 {
     public class TimeEntry
     {
-       public long id;
-       public long projectId;
-       public long userId;
-       public DateTime date ;
-       public int hours ;
+       public long? Id;
+       public long ProjectId;
+       public long UserId;
+       public DateTime Date ;
+       public int Hours ;
        public TimeEntry()
        {
            
        }
         public TimeEntry(long id, long projectId, long userId, DateTime date, int hours)
         {
-           this.id = id;
-           this.projectId = projectId;
-           this.userId = userId;
-           this.date = date;
-           this.hours = hours;
+           this.Id = id;
+           this.ProjectId = projectId;
+           this.UserId = userId;
+           this.Date = date;
+           this.Hours = hours;
         }
         public TimeEntry(long projectId, long userId, DateTime date, int hours)
         {
            //this.id = id;
-           this.projectId = projectId;
-           this.userId = userId;
-           this.date = date;
-           this.hours = hours;
+           this.ProjectId = projectId;
+           this.UserId = userId;
+           this.Date = date;
+           this.Hours = hours;
         }
 
         public override bool Equals(object obj)
         {
             return obj is TimeEntry entry &&
-                   id == entry.id &&
-                   projectId == entry.projectId &&
-                   userId == entry.userId &&
-                   date == entry.date &&
-                   hours == entry.hours;
+                   Id == entry.Id &&
+                   ProjectId == entry.ProjectId &&
+                   UserId == entry.UserId &&
+                   Date == entry.Date &&
+                   Hours == entry.Hours;
         }
 
         public override int GetHashCode()
         {
-            return HashCode.Combine(id, projectId, userId, date, hours);
+            return HashCode.Combine(Id, ProjectId, UserId, Date, Hours);
         }
     }
 }

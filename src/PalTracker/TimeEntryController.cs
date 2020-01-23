@@ -17,7 +17,7 @@ namespace PalTracker
         {
             var createdTimeEntry = _repository.Create(timeEntry);
 
-            return CreatedAtRoute("GetTimeEntry", new {id = createdTimeEntry.id}, createdTimeEntry);
+            return CreatedAtRoute("GetTimeEntry", new {id = createdTimeEntry.Id}, createdTimeEntry);
         }
 
         [HttpGet("{id}", Name = "GetTimeEntry")]

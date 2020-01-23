@@ -14,7 +14,7 @@ namespace PalTracker
 
         public TimeEntry Create(TimeEntry timeEntry)
         {   
-            timeEntry.id = ++current_id ;
+            timeEntry.Id = ++current_id ;
             timeEntryobjects.Add(current_id, timeEntry);
             return timeEntry;
             //throw new NotImplementedException();
@@ -40,7 +40,7 @@ namespace PalTracker
         public TimeEntry Update(long id, TimeEntry timeEntry)
         {
             
-                timeEntry.id  = id ;
+                timeEntry.Id  = id ;
                 timeEntryobjects[id] = timeEntry;
                 return timeEntryobjects[id];      
             
